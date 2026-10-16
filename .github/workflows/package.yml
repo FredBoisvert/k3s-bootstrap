@@ -1,0 +1,25 @@
+name: Package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create package
+        run: tar -czf k3s-bootstrap.tar.gz README.md setup-k3s-flux.sh
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: k3s-bootstrap
+          path: k3s-bootstrap.tar.gz
