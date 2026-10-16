@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create package
-        run: tar -czf k3s-bootstrap.tar.gz README.md setup-k3s-flux.sh
+        run: tar -czf k3s-bootstrap.tar.gz README.md setup-k3s-flux.sh setup-k3s-worker.sh
 
       - name: Upload package
         uses: actions/upload-artifact@v4
