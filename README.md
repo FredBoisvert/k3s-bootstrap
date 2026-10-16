@@ -90,7 +90,8 @@ Registry credentials are node-local and are not copied automatically.
 
 ## Packaging
 
-The GitHub Actions workflow packages `README.md` and `setup-k3s-flux.sh` into a
-gzip-compressed tar archive on pushes, pull requests, and manual runs. Download
+The GitHub Actions workflow packages `README.md`, `setup-k3s-flux.sh`, and
+`setup-k3s-worker.sh` into a gzip-compressed tar archive on pushes, pull requests,
+and manual runs. Download
 the `k3s-bootstrap` artifact from the completed workflow run's **Artifacts**
 section. The archive is named `k3s-bootstrap.tar.gz`.
